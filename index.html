@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Cat Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Random Cat Facts</h1>
+        <p id="fact"></p>
+        <button id="newFactButton">Get a New Fact</button>
+    </div>
+    <script>
+        const catFacts = [
+            {
+                "fact": "Whisker Sensitivity",
+                "description": "Cats have highly sensitive whiskers that can detect changes in their environment, helping them navigate in the dark."
+            },
+            {
+                "fact": "Purring Mechanism",
+                "description": "Cats purr not only when they are happy but also when they are in pain or stressed, as purring can have a calming effect."
+            },
+            {
+                "fact": "Unique Nose Prints",
+                "description": "Just like human fingerprints, each cat has a unique nose print that can be used to identify them."
+            },
+            {
+                "fact": "Sleep Patterns",
+                "description": "Cats are known for their love of sleep, averaging 12-16 hours a day, which is about two-thirds of their life."
+            },
+            {
+                "fact": "Communication",
+                "description": "Cats communicate with humans through vocalizations, body language, and even facial expressions, but they rarely meow at other cats."
+            },
+            {
+                "fact": "Hunting Instincts",
+                "description": "Even domesticated cats retain strong hunting instincts and will often engage in play that mimics hunting behaviors."
+            },
+            {
+                "fact": "Grooming Habits",
+                "description": "Cats spend a significant amount of time grooming themselves, which helps them regulate their body temperature and keep their fur clean."
+            },
+            {
+                "fact": "Lifespan",
+                "description": "The average lifespan of an indoor cat is around 12-15 years, but many can live into their 20s with proper care."
+            },
+            {
+                "fact": "Social Structure",
+                "description": "While cats are often seen as solitary animals, they can form strong social bonds with other cats and even with humans."
+            },
+            {
+                "fact": "Color Perception",
+                "description": "Cats see the world differently than humans; they can see some colors but are more sensitive to blue and green hues, while reds and pinks may appear more grayish to them."
+            }
+        ];
+
+        document.getElementById('newFactButton').addEventListener('click', function() {
+            const randomIndex = Math.floor(Math.random() * catFacts.length);
+            const selectedFact = catFacts[randomIndex];
+            document.getElementById('fact').innerText = `${selectedFact.fact}: ${selectedFact.description}`;
+        });
+    </script>
+</body>
+</html>
